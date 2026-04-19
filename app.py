@@ -14,7 +14,7 @@ with st.sidebar:
     image = st.file_uploader("Uplode Image",type=["jpg","png","jpeg"], accept_multiple_files = True)
     if image:
         if len(image) > 3:
-            st.error("Max Uplode 3 Image")
+            st.error("Max Uplode 3 Image, vai 3 ta ar besi dis nah , emni-tai taka nai -_-")
         else :
             st.subheader("Uploded image is ")
             col = st.columns(len(image))
@@ -25,7 +25,7 @@ with st.sidebar:
 
 
 
-    deficulty = st.selectbox("Enter the Deficulty ", ("Easy","Mid","Hard"), index = None)
+    deficulty = st.selectbox("Enter the Deficulty of quize ", ("Easy","Mid","Hard"), index = None)
     if deficulty and image:
 
         bt = st.button("Click to Submit", type = "primary")
@@ -36,7 +36,7 @@ if bt:
         st.subheader("Your Note")
 
 
-        with st.spinner("W8 a Bit ..."):
+        with st.spinner("W8 a Bit uplode hoitese , golpo korte thak vai ..."):
             # convat to pil image
             pil_image = []
             for img in image:
@@ -53,7 +53,7 @@ if bt:
 
     with st.container(border = True):
         st.subheader(f"Quize Part with {deficulty} deficulty")
-        with st.spinner():
+        with st.spinner("ai sele porasonar ki khobor, porte hobe ..  na porle kintu hobe nah ,,,, "):
             st.markdown(generate_quize(pil_image, deficulty))
         
         
